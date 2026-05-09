@@ -1,4 +1,5 @@
 import os
+import asyncio
 import sqlite3
 import time
 from datetime import datetime
@@ -255,7 +256,9 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # ======================
 # RUN
 # ======================
-app = ApplicationBuilder().token(TOKEN).build()
+from telegram.ext import Application
+
+app = Application.builder().token(TOKEN).build()
 
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CallbackQueryHandler(button))
