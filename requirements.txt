@@ -1,1 +1,1 @@
-python-telegram-bot==20.x
+python-telegram-bot>=20.0
