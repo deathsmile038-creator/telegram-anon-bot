@@ -269,4 +269,7 @@ app.add_handler(MessageHandler(filters.VIDEO, handle_video))
 app.add_handler(MessageHandler(filters.Sticker.ALL, handle_sticker))
 
 print("Bot started")
-app.run_polling()
+app = Application.builder().token(TOKEN).build()
+
+if __name__ == "__main__":
+    app.run_polling()
